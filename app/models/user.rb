@@ -10,19 +10,25 @@ class User < ActiveRecord::Base
 		user = User.find_by(email: email)
 
 		if user
+			
 			fish = BCrypt::Engine.hash_secret(password, user.salt)
+			
 			if user.fish == fish
 				return user
 			end
+
 		end
+		
 		nil
 	end
 
 	private
 
 	def encrypt_password
+
 		self.salt = BCrypt::Engine.generate_salt
 		self.fish = BCrypt::Engine.hash_secret(password, self.salt)
+
 	end
 
 end
