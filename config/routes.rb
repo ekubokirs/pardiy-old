@@ -5,7 +5,7 @@ Pardiy::Application.routes.draw do
   
   resource :session, only: [:new, :create, :destroy]
 
-  get "login" => "session/#ew"
+  get "login" => "session#new"
   post "login" => "session#create"
   delete "login" => "session#destroy"
   get "login" => "session#destroy"
