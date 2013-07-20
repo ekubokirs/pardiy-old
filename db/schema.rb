@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20130716032919) do
     t.string   "email"
     t.string   "fish"
     t.string   "salt"
+    t.string   "code"
+    t.string   "expires_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

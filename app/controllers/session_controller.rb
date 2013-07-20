@@ -3,14 +3,22 @@ class SessionController < ApplicationController
   end
 
   def create
-  	user = User.authenitcate(params[:email], params[:password])
+  	if params[:password].blank?
+      user = User.find_by(email: params[:email])
 
-  	if user
-  		session[:user_id] = user.user_id
-  		redirect_to root_url
-  	else
-  		render :new
-  	end
+      if user
+        user.code = SecureRandom.urlsafe_base64
+        user.expires_at = Time.now + 2. hours
+        user.save
+      end
+    else
+      user = User.authenitcate(params[:email], params[:password])
+
+      if user
+        session[:user_id] = user.user_id
+        redirect_to root_url
+      end
+      render :new
   end
 
   def destroy

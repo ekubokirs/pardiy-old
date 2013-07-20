@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
 	attr_accessor :password, :password_confirmation
 
 	validates :password, confirmation: true
-	validates :password_confirmation, presence: true
+	validates :password_confirmation, presence: true, unless: "password.nil?"
 
 	def self.authenticate(email, password)
 		user = User.find_by(email: email)
