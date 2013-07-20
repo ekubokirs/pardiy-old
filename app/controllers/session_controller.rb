@@ -19,8 +19,9 @@ class SessionController < ApplicationController
         redirect_to root_url
       end
       render :new
+    end
   end
-
+  
   def destroy
   	session[:user_id] = nil
   	redirect_to login_url
