@@ -17,10 +17,10 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: pardiy_development
+  database: pardiy_dev
   pool: 5
-  username: emiliakubokirschenbaum
-  password: emilia
+  username: TLuu
+  password: Post208
   host: localhost
 
 test:
@@ -28,8 +28,8 @@ test:
   encoding: unicode
   database: pardiy_test
   pool: 5
-  username: emiliakubokirschenbaum
-  password: emilia
+  username: TLuu
+  password: Post208
   host: localhost
 
 production:
@@ -37,5 +37,6 @@ production:
   encoding: unicode
   database: pardiy_production
   pool: 5
-  username: emiliakubokirschenbaum
-  password: emilia
+  username: TLuu
+  password: Post208
+  
