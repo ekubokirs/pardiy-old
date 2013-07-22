@@ -1,5 +1,14 @@
 Pardiy::Application.routes.draw do
 
+  get "users/index"
+  get "users/show"
+  get "users/new"
+  get "users/edit"
+  get "users/create"
+  get "users/update"
+  get "users/destroy"
+  get "password/edit"
+  get "password/update"
   get "privacy" => "site#privacy"
   get "terms" => "site#terms"
   
